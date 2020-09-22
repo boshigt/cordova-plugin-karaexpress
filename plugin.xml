@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-kara-express" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>KaraExpressPlugin</name>
+    <js-module name="KaraExpressPlugin" src="www/KaraExpressPlugin.js">
+        <clobbers target="karaexpressplugin" />
+    </js-module>
+	
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="KaraExpressPlugin">
+				<param name="android-package" value="kara.express.plugin.KaraExpressPlugin" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		</config-file>
+		
+		<source-file src="src/android/KaraExpressPlugin.java" target-dir="src/kara/express/plugin" />
+		<source-file src="src/android/libs/iccard7003.jar" target-dir="libs" />
+		<source-file src="src/android/libs/minilcd7003.jar" target-dir="libs" />
+		<source-file src="src/android/libs/nfc7003.jar" target-dir="libs" />
+		<source-file src="src/android/libs/mifare7003.jar" target-dir="libs" />
+		<source-file src="src/android/libs/printer7003.jar" target-dir="libs" />
+		<source-file src="src/android/libs/Scan7003.jar" target-dir="libs" />
+		
+		<source-file src="src/android/libs/armeabi/libiccard7003.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libminilcd7003.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libnfc7003.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libmifare7003.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libprinter7003.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libscan7003.so" target-dir="libs/armeabi" />
+		
+	</platform>
+</plugin>
